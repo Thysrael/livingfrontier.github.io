@@ -126,17 +126,17 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">29</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">60</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">62</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">189</span></a>
 
   </li>
         <li class="menu-item menu-item-resource">
@@ -213,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/e9ef90fa/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/426b82c2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -227,7 +227,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/e9ef90fa/" class="post-title-link" itemprop="url">并行计算-hw2</a>
+            <a href="/posts/426b82c2/" class="post-title-link" itemprop="url">编译技术-编译优化</a>
         </h2>
 
         <div class="post-meta">
@@ -237,14 +237,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-05 10:56:25" itemprop="dateCreated datePublished" datetime="2022-11-05T10:56:25+08:00">2022-11-05</time>
+              <time title="Created: 2022-12-28 22:57:16" itemprop="dateCreated datePublished" datetime="2022-12-28T22:57:16+08:00">2022-12-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
+                <time title="Modified: 2025-01-23 19:40:12" itemprop="dateModified" datetime="2025-01-23T19:40:12+08:00">2025-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" itemprop="url" rel="index"><span itemprop="name">并行计算</span></a>
+                  <a href="/categories/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">编译技术</span></a>
                 </span>
             </span>
 
@@ -262,14 +262,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>12k</span>
+              <span>5.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>11 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -281,7 +281,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、个人信息"><a href="#一、个人信息" class="headerlink" title="一、个人信息"></a>一、个人信息</h2><div class="table-container">
+          <h1 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h1><h2 id="1-个人信息"><a href="#1-个人信息" class="headerlink" title="1 个人信息"></a>1 个人信息</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -292,28 +292,31 @@
 <tbody>
 <tr>
 <td>学号</td>
-<td>xxxxxx</td>
+<td>2037xxxx</td>
 </tr>
 <tr>
 <td>姓名</td>
-<td>Thyrsael</td>
+<td>Thysrael</td>
+</tr>
+<tr>
+<td>年级</td>
+<td>2006</td>
 </tr>
 <tr>
 <td>学院</td>
 <td>计算机学院</td>
 </tr>
 <tr>
-<td>JobID</td>
-<td>7991086</td>
+<td>竞速排名</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
 </div>
-<hr>
-<h2 id="二、实验过程"><a href="#二、实验过程" class="headerlink" title="二、实验过程"></a>二、实验过程</h2><p>对于模式串的生成，调用 <code>gen_ped</code> 程序，生成长度为 3，周期长度为 2，随机种子为 1。调用命令如下</p>
+<h2 id="2-总论"><a href="#2-总论" class="headerlink" title="2 总论"></a>2 总论</h2><p>我个人认为，优化分为两类，一类是分析型优化，这种类型的优化并不会改变 llvm ir 的结构，所以也不会有实际的优化效果，但是它们分析出来的信息，会去指导加工型优化的进行。另一种是加工型优化，这种优化会真正改变 llvm ir 的结构，达到优化的目的。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/e9ef90fa/#more" rel="contents">
+              <a class="btn" href="/posts/426b82c2/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -337,7 +340,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/a5deb975/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/bae88282/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -351,7 +354,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/a5deb975/" class="post-title-link" itemprop="url">数学建模-数学模型</a>
+            <a href="/posts/bae88282/" class="post-title-link" itemprop="url">算法设计-hw4</a>
         </h2>
 
         <div class="post-meta">
@@ -361,325 +364,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-03 19:09:14" itemprop="dateCreated datePublished" datetime="2022-11-03T19:09:14+08:00">2022-11-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" itemprop="url" rel="index"><span itemprop="name">数学建模</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>205</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>无论是数学建模比赛，还是数学建模课，我都太过于关注工具的使用了，经常因为学会了 <code>matlab</code> 的又一高级特性或者 <code>python</code> 的又一个库而兴奋半天，但是实际上一点有用的知识都没有学习。</p>
-<p>数学建模，重要的不是计算机，或者是某个方法，换句话说，解决问题不是数学建模的精髓，将实际问题抽象成一个数学问题，即“建模”的过程，才是本质。我们学习诸多的方法，不是为了学习其原理，而是为了拓展视野，意识到原来还可以这样建模。</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/70e6c140/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.png">
-      <meta itemprop="name" content="Thysrael">
-      <meta itemprop="description" content="Can you hear me ?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钟鼓楼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/70e6c140/" class="post-title-link" itemprop="url">并行计算-hw1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-26 17:43:59" itemprop="dateCreated datePublished" datetime="2022-10-26T17:43:59+08:00">2022-10-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" itemprop="url" rel="index"><span itemprop="name">并行计算</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>12k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>11 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hw1-Ring-实验报告"><a href="#hw1-Ring-实验报告" class="headerlink" title="hw1: Ring 实验报告"></a>hw1: Ring 实验报告</h1><h2 id="一、个人信息"><a href="#一、个人信息" class="headerlink" title="一、个人信息"></a>一、个人信息</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>条目</th>
-<th>信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>姓名</td>
-<td>Thysrael</td>
-</tr>
-<tr>
-<td>学号</td>
-<td>xxxxxxx</td>
-</tr>
-<tr>
-<td>学院</td>
-<td>xxxxxx</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2 id="二、题目分析"><a href="#二、题目分析" class="headerlink" title="二、题目分析"></a>二、题目分析</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/70e6c140/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/d7aec70a/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.png">
-      <meta itemprop="name" content="Thysrael">
-      <meta itemprop="description" content="Can you hear me ?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钟鼓楼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/d7aec70a/" class="post-title-link" itemprop="url">IEArch-矩阵乘法模块</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-26 17:43:46" itemprop="dateCreated datePublished" datetime="2022-10-26T17:43:46+08:00">2022-10-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:58" itemprop="dateModified" datetime="2024-10-22T20:00:58+08:00">2024-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IEArch/" itemprop="url" rel="index"><span itemprop="name">IEArch</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>7.7k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>7 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一、思考题"><a href="#一、思考题" class="headerlink" title="一、思考题"></a>一、思考题</h2><blockquote>
-<p>回答 4.1.5 疑问中的疑问,</p>
-<p>问题 1 —— 第二个矩阵计算为何出错,</p>
-<p>问题 2 —— MAC.v 是否有修改的必要</p>
-</blockquote>
-<h3 id="1-1-问题-1"><a href="#1-1-问题-1" class="headerlink" title="1.1 问题 1"></a>1.1 问题 1</h3><p>第一个矩阵出错的原因是在第二个矩阵计算中，在第一个矩阵中涉及到了负数</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">111</span><span class="token punctuation">,</span>   <span class="token number">25</span><span class="token punctuation">,</span>   <span class="token number">32</span><span class="token punctuation">,</span>   <span class="token number">66</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">99</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">28</span><span class="token punctuation">,</span>   <span class="token number">16</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">95</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span>  <span class="token number">63</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">102</span><span class="token punctuation">,</span>   <span class="token number">40</span><span class="token punctuation">,</span>   <span class="token number">73</span><span class="token punctuation">,</span>   <span class="token number">16</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">53</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">33</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">27</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span> <span class="token operator">-</span><span class="token number">39</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">79</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">83</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">112</span><span class="token punctuation">,</span>   <span class="token number">59</span><span class="token punctuation">,</span>   <span class="token number">34</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">49</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">57</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span> <span class="token operator">-</span><span class="token number">18</span><span class="token punctuation">,</span>  <span class="token number">103</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">86</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">51</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">104</span><span class="token punctuation">,</span>   <span class="token number">36</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">105</span><span class="token punctuation">,</span>  <span class="token number">112</span><span class="token punctuation">,</span>   <span class="token number">58</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span>  <span class="token number">52</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">52</span><span class="token punctuation">,</span>    <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">95</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">123</span><span class="token punctuation">,</span>   <span class="token number">34</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">89</span><span class="token punctuation">,</span>   <span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span>  <span class="token number">50</span><span class="token punctuation">,</span>  <span class="token number">123</span><span class="token punctuation">,</span>   <span class="token number">90</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">74</span><span class="token punctuation">,</span>   <span class="token number">99</span><span class="token punctuation">,</span>  <span class="token number">100</span><span class="token punctuation">,</span>   <span class="token number">95</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">97</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span>  <span class="token number">12</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">94</span><span class="token punctuation">,</span>   <span class="token number">55</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">14</span><span class="token punctuation">,</span>  <span class="token number">115</span><span class="token punctuation">,</span>   <span class="token number">84</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">110</span><span class="token punctuation">,</span>   <span class="token number">64</span><span class="token punctuation">,</span>   <span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span>  <span class="token number">74</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">105</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">111</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">43</span><span class="token punctuation">,</span>   <span class="token number">63</span><span class="token punctuation">,</span>  <span class="token number">107</span><span class="token punctuation">,</span>  <span class="token number">111</span><span class="token punctuation">,</span>   <span class="token number">56</span><span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/d7aec70a/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/538b27b7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.png">
-      <meta itemprop="name" content="Thysrael">
-      <meta itemprop="description" content="Can you hear me ?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钟鼓楼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/538b27b7/" class="post-title-link" itemprop="url">算法设计-hw2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-20 09:09:42" itemprop="dateCreated datePublished" datetime="2022-10-20T09:09:42+08:00">2022-10-20</time>
+              <time title="Created: 2022-12-10 20:23:11" itemprop="dateCreated datePublished" datetime="2022-12-10T20:23:11+08:00">2022-12-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -704,14 +389,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>8.2k</span>
+              <span>241</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>7 mins.</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -723,16 +408,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、从分治到动态规划"><a href="#一、从分治到动态规划" class="headerlink" title="一、从分治到动态规划"></a>一、从分治到动态规划</h2><h3 id="1-1-动态规划的性质"><a href="#1-1-动态规划的性质" class="headerlink" title="1.1 动态规划的性质"></a>1.1 动态规划的性质</h3><p>动态规划具有以下三个明显特性：</p>
+          <h2 id="DFS-中边的分类"><a href="#DFS-中边的分类" class="headerlink" title="DFS 中边的分类"></a>DFS 中边的分类</h2><p>在无向图中，有两种边：</p>
 <ul>
-<li><strong>无后效性</strong>：如果给定某一阶段的状态，则在这一阶段以后过程的发展不受这阶段以前各段状态的影响。如果说的直白一些，就是当我们求出 $dp_i$ 的时候，我们是怎样求出来的，就不用管了，我们只需要利用 $dp_i$ 就可以了。类似于“只要上了北航，没人管你到底是从河北考上的的，还是从月球考上的，大家只认为你是一个北航学生。”</li>
-<li><strong>最优子结构</strong>：规模大的最优化问题包含规模小的最优化问题，大问题的<strong>最优解</strong>可以由小问题的<strong>最优解</strong>推出。</li>
-<li><strong>重叠子问题</strong>：子问题的解不止会被利用一次。</li>
+<li>树边：指出现在深度优先树中的边。</li>
+<li>后向边：两顶点有祖先后代关系的非树边。这个后向边的定义其实叫做非横向边更好，因为“有祖先后代关系”的意思就是这个边的端点不可能在深度优先树上是兄弟关系。</li>
 </ul>
-<p>虽然这三个特性都被称为“动态规划”的特性，但是“无后效性”和“最优子结构”并非是动态规划的专利。对于“无后效性”，应该是所有的分治算法都具有这个特性，如果我们必须掌握子问题的求解过程，那么显然我们就没必要将大问题分治为小问题。对于“最优子结构”，虽然“最优”二字将问题划定成了“最优化算法”的范畴，但是如果扩充最优化的定义，会发现依然几乎所有分治算法都满足具有最优子结构的定义。</p>
+<p>也就是说，只要是非树边，就一定是后向边，这个我粗略思考，感觉可以用括号化定理证明。</p>
+<p>在有向图中，有四种边：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/538b27b7/#more" rel="contents">
+              <a class="btn" href="/posts/bae88282/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -756,7 +441,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/d9d8ff0a/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/85c5e2da/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -770,7 +455,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/d9d8ff0a/" class="post-title-link" itemprop="url">数学建模-Python相关库</a>
+            <a href="/posts/85c5e2da/" class="post-title-link" itemprop="url">DBMS-产品经理反思</a>
         </h2>
 
         <div class="post-meta">
@@ -780,7 +465,105 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-10-14 14:15:30" itemprop="dateCreated datePublished" datetime="2022-10-14T14:15:30+08:00">2022-10-14</time>
+              <time title="Created: 2022-12-10 17:18:26" itemprop="dateCreated datePublished" datetime="2022-12-10T17:18:26+08:00">2022-12-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-22 20:00:58" itemprop="dateModified" datetime="2024-10-22T20:00:58+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DBMS/" itemprop="url" rel="index"><span itemprop="name">DBMS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>第一次当产品经理，以为就很简单，甚至可以很摸鱼的干完，但是事实并不是这样的，从结果来看，似乎并不能说，因为有了我，团队得到了一些其他团队所不具有的优势，并且并不需要付出相应的代价。</p>
+<p>应该这么说，我天生对于“条理和系统”的追求让我们的团队合作确实相比于其他团队要更加有条不紊的进行，在项目架构上没有出现大幅度修改，我“前瞻”的习惯也让团队没有遇到过十分紧急的技术难题，我良好的记忆力和文档更新速度，也让团队交流的效率大大提高。</p>
+<p>但是我对于设计风格和设计需求的“独裁”确实在一定程度上损害了团队的表现。在设计风格方面，作为一个美术生，我显然自视甚高，不过其实我是一个十分没有才华的美术生，所以导致我并没有办法托举整个团队的审美。而在设计需求方面，我没啥“独裁”的欲念，不过我实在是太善于表达，导致组员确实没法正常表达完整观点（当然，可能是他们不在乎），这就导致有有一些需求是没有覆盖到，从后面的经验来看，如果需求没有覆盖全，那么将是致命的。</p>
+<p>写这个文章的目的也是为了给以后的工程实践积累一些经验，同时为假期的预习指明一些道路。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/85c5e2da/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/5f538495/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.png">
+      <meta itemprop="name" content="Thysrael">
+      <meta itemprop="description" content="Can you hear me ?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟鼓楼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/5f538495/" class="post-title-link" itemprop="url">并行计算-展示</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-24 13:11:26" itemprop="dateCreated datePublished" datetime="2022-11-24T13:11:26+08:00">2022-11-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -795,7 +578,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" itemprop="url" rel="index"><span itemprop="name">数学建模</span></a>
+                  <a href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" itemprop="url" rel="index"><span itemprop="name">并行计算</span></a>
                 </span>
             </span>
 
@@ -805,14 +588,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>11k</span>
+              <span>4.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>10 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -824,11 +607,233 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、NumPy"><a href="#一、NumPy" class="headerlink" title="一、NumPy"></a>一、NumPy</h2><h3 id="1-1-参考资料"><a href="#1-1-参考资料" class="headerlink" title="1.1 参考资料"></a>1.1 参考资料</h3><p>这篇文章写得实在是太好了<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/396444973?utm_campaign=shareopn&amp;utm_medium=social&amp;utm_oi=1124048358603636736&amp;utm_psn=1564313588545552384&amp;utm_source=wechat_session">图解链接</a> 。</p>
-<h3 id="1-2-Array-Matrix"><a href="#1-2-Array-Matrix" class="headerlink" title="1.2 Array Matrix"></a>1.2 Array Matrix</h3><p>这两种东西是不一样的，<code>np.array</code> 也可以有多维，但是它的 <code>*</code> 就是点对点乘法，而 <code>@</code> 是点乘。但是对于 <code>np.matrix</code> 来说，无论是 <code>*</code> 还是 <code>@</code> 都是<strong>点乘</strong>，<code>sp.Matrix</code> 同理。有如下演示</p>
+          <h2 id="一、摘要"><a href="#一、摘要" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>我们介绍了一种<strong>广度优先搜索大型图</strong>的算法，这种算法是<strong>基于 CUDA</strong> 的一种改进算法。</p>
+<p>最新的版本极大的<strong>利用了 Kepler 架构的性能</strong>，并且依赖于<strong>多个 GPU 交流数量</strong>和<strong>交换数据量</strong>的减少。</p>
+<p>最终的结果是代码可以在 4096 Tesla K20X GPUs 上使用一个集群在一秒内遍历超过 800,000,000,000 条边。</p>
+<hr>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/d9d8ff0a/#more" rel="contents">
+              <a class="btn" href="/posts/5f538495/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/f0dad564/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.png">
+      <meta itemprop="name" content="Thysrael">
+      <meta itemprop="description" content="Can you hear me ?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟鼓楼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/f0dad564/" class="post-title-link" itemprop="url">IEArch-NaiveTPU</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-24 12:59:39" itemprop="dateCreated datePublished" datetime="2022-11-24T12:59:39+08:00">2022-11-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-22 20:00:58" itemprop="dateModified" datetime="2024-10-22T20:00:58+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IEArch/" itemprop="url" rel="index"><span itemprop="name">IEArch</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>12k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>11 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="实验报告"><a href="#实验报告" class="headerlink" title="实验报告"></a>实验报告</h1><h2 id="一、实验原理"><a href="#一、实验原理" class="headerlink" title="一、实验原理"></a>一、实验原理</h2><h3 id="1-1-项目架构"><a href="#1-1-项目架构" class="headerlink" title="1.1 项目架构"></a>1.1 项目架构</h3><p>相比于 lab4 只有 Bram 是在板子上，而 PL 采用软件模拟的，这次 PL 侧我们利用 FPGA 实现了，也就是真正完成了一个简单的乘法运算加速器。</p>
+<p><img src="/posts/f0dad564/示意图.png" alt></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/f0dad564/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/9ee8a06c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.png">
+      <meta itemprop="name" content="Thysrael">
+      <meta itemprop="description" content="Can you hear me ?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟鼓楼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/9ee8a06c/" class="post-title-link" itemprop="url">并行计算-hw3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-11 09:20:30" itemprop="dateCreated datePublished" datetime="2022-11-11T09:20:30+08:00">2022-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" itemprop="url" rel="index"><span itemprop="name">并行计算</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一、个人信息"><a href="#一、个人信息" class="headerlink" title="一、个人信息"></a>一、个人信息</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>条目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学号</td>
+<td>xxxxx</td>
+</tr>
+<tr>
+<td>姓名</td>
+<td>Thyrsael</td>
+</tr>
+<tr>
+<td>学院</td>
+<td>计算机学院</td>
+</tr>
+<tr>
+<td>JobID</td>
+<td>7995268</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="二、实验过程"><a href="#二、实验过程" class="headerlink" title="二、实验过程"></a>二、实验过程</h2><p>首先用矩阵生成程序生成 $matrixA[1200 : 1600]$ 和 $matrixB[1600:2000]$ 两个矩阵</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/9ee8a06c/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -851,7 +856,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -919,20 +924,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">189</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -974,8 +979,8 @@
 
 <div class="copyright">
   
-  &copy; 2021-12 – 
-  <span itemprop="copyrightYear">2024</span>
+  &copy; 2021.12.18 – 
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -984,12 +989,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1.2m</span>
+    <span title="Symbols count total">1.3m</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">18:48</span>
+    <span title="Reading time total">19:15</span>
 </div>
 
         

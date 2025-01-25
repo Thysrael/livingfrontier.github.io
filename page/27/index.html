@@ -126,17 +126,17 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">29</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">60</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">62</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">189</span></a>
 
   </li>
         <li class="menu-item menu-item-resource">
@@ -213,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/dc316254/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/4c542040/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -227,7 +227,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/dc316254/" class="post-title-link" itemprop="url">计算机组成-存储系统</a>
+            <a href="/posts/4c542040/" class="post-title-link" itemprop="url">计算机组成-支持中断的CPU</a>
         </h2>
 
         <div class="post-meta">
@@ -237,7 +237,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-01-06 21:05:35" itemprop="dateCreated datePublished" datetime="2022-01-06T21:05:35+08:00">2022-01-06</time>
+              <time title="Created: 2022-01-16 00:51:23" itemprop="dateCreated datePublished" datetime="2022-01-16T00:51:23+08:00">2022-01-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -262,14 +262,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.7k</span>
+              <span>28k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>25 mins.</span>
             </span>
 
         </div>
@@ -281,12 +281,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>这篇总结并不是一个很好的知识体系，他只是为了考试而临时搭建的一个考试体系。</p>
-<p>通常把存放一个二进制单位的物理器件称为<strong>存储元</strong>，<strong>地址码相同的多个存储元构成一个存储单元</strong>（这个定义一针见血！）。若干个存储单元构成一个存储体（又被称为存储矩阵），其特点就是会用到<strong>地址</strong>这个概念。</p>
-<p>这个没有更新完，是因为我有看了关于虚拟机的部分内容，感觉挺有意思的，想写一个更加融汇贯通的，所以搭建文章脉络的周期会延长，考试前可能更不了了。</p>
+          <h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><h3 id="1-1-关于需求"><a href="#1-1-关于需求" class="headerlink" title="1.1 关于需求"></a>1.1 关于需求</h3><p>我认为，在P7，我们设计的最终目的是实现一个<strong>看上去像单周期CPU的、具有反馈控制接口的流水线CPU</strong>。如果再将目标细化一些，那么就是两个小目标，那就是：</p>
+<ul>
+<li>从外部（也就是软件程序开发者）看，流水线CPU被<strong>封装</strong>成了单周期CPU</li>
+<li>CPU可以为外部提供反馈信息，并且可以让外部根据反馈信息进而更改CPU的运行状态（整个过程叫做反馈，实现了这个功能的CPU具有了软硬件交互<strong>接口</strong>）</li>
+</ul>
+<p>其中第一个需求，体现的是<strong>对硬件良好的封装能力</strong>，也就是极高的设计能力，设计者必须同时站在CPU内部和外部角度，从外部去检查没有流水线的任何细节漏出，从内部去实现这种伪装。对于第二个需求，体现的是对<strong>控制和接口更高层次的理解</strong>，我们的CPU的控制会变得更加复杂，会具有反馈和二次控制的功能，同时，软硬件接口交互也加大了理解的难度，因为有一部分功能交由软件负责，而我们不负责软件。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/dc316254/#more" rel="contents">
+              <a class="btn" href="/posts/4c542040/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -310,7 +313,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/c9751615/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/43a376bd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -324,7 +327,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/c9751615/" class="post-title-link" itemprop="url">计算机组成-数据表示</a>
+            <a href="/posts/43a376bd/" class="post-title-link" itemprop="url">计算机组成-MIPS汇编</a>
         </h2>
 
         <div class="post-meta">
@@ -334,7 +337,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-01-06 20:48:41" itemprop="dateCreated datePublished" datetime="2022-01-06T20:48:41+08:00">2022-01-06</time>
+              <time title="Created: 2022-01-16 00:39:46" itemprop="dateCreated datePublished" datetime="2022-01-16T00:39:46+08:00">2022-01-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -359,14 +362,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>6.6k</span>
+              <span>9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>6 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -378,11 +381,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>跟布尔代数那一篇性质类似，可以看做是布尔代数在数字电路中的一个应用。里面介绍的东西跟计组这门课关系不大。</p>
-<p>但是可以说，这个实在是太<strong>漂亮优雅</strong>了。首先接触的时候就可以体会出<strong>硬件思想</strong>与编程软件思想的区别（还是多亏了叶哥哥的提醒），然后还可以体会<strong>设计</strong>思想，是一种完全不同于解题的理念，需要考虑的东西更多，有的时候求的不是最完美，而是最合适。</p>
+          <h2 id="一、寄存器与内存"><a href="#一、寄存器与内存" class="headerlink" title="一、寄存器与内存"></a>一、寄存器与内存</h2><h3 id="1-1-字节与字"><a href="#1-1-字节与字" class="headerlink" title="1.1 字节与字"></a>1.1 字节与字</h3><p>关于对<strong>字</strong>（word）的理解，我又有了新的认识，word是一种操作单位，而且是最常见的操作单位（不是最小的），内存的地址是用一个字（32位二进制数）来表示的，一条指令的长度是一个字，寄存器的大小也是一个字，立即数的大小也是一个字，甚至对于那些不足一个字长度的数据，我们都需要给它<strong>补齐</strong>，然后再对它进行操作。所以字最大的特点就是它的<strong>通用性</strong>。</p>
+<p>那么什么是<strong>字节</strong>（byte）呢？字节是<strong>指令集</strong>的<strong>最小单位</strong>。这个观点是花了很久才意识到的，因为我知道数据是按二级制表示的，那么如果把<strong>位</strong>（bit）作为最小单位，岂不是理所当然。但其实就是不是的，这可能是因为我们需要<strong>更简洁更优雅</strong>的指令抽象，所以就舍弃了对单独一个位的操作，就好像数字电路舍弃了<strong>异步</strong>和<strong>连续</strong>一样。注意，字节不但是操作的最小单位（可能不准确，我还没想到太明显的操作字节的指令），而且是指令集的最小单位，比如我们说<strong>0x00000000</strong>和<strong>0x00000001</strong>这两个地址差1，那么这个1就是“1个字节”，也就是这两个地址之间差了8个bit。而不是1个bit。再比如说，我们都说int是4字节，char是1字节，我们从来不说int是32位，char是8位，可见更高层次抽象的高级语言，就更不把位当回事请了。</p>
+<p>然后我们还需要一些直观的认识，一个字节是8bit，也就是说，他的能表示256个不同的状态，如果写成一个十六进制数，那么他可以表示任何一个<strong>两位</strong>的十六进制数，也就是长成这个样子 <strong>XX</strong>。在MIPS中，一个word是由四个字节组成的，也就是说，我们去写一个十六进制数，它应该长成这个样子 <strong>0x XX_XX_XX_XX</strong> 。一个word的大小是跟一个int一样大的，同时，它跟MIPS中的立即数是一样大的，也就是说，一个word刚好能存一个数字（开数组的时候会用到）。但是可以存4个字符，这是因为字符只占一个字节。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/c9751615/#more" rel="contents">
+              <a class="btn" href="/posts/43a376bd/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -406,7 +410,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/f6a8f3b9/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/f4bb53f7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -420,7 +424,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/f6a8f3b9/" class="post-title-link" itemprop="url">计算机组成-布尔代数</a>
+            <a href="/posts/f4bb53f7/" class="post-title-link" itemprop="url">离散数学-函数</a>
         </h2>
 
         <div class="post-meta">
@@ -430,108 +434,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-01-06 20:48:22" itemprop="dateCreated datePublished" datetime="2022-01-06T20:48:22+08:00">2022-01-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:01:00" itemprop="dateModified" datetime="2024-10-22T20:01:00+08:00">2024-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" itemprop="url" rel="index"><span itemprop="name">计算机组成</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是我在授课的时候总结的，所以显得会比较稚嫩，内容也不太全，但是没时间再花心思整理这个内容了，只能说做题遇见不会的在说吧。</p>
-<p>里面的知识还是很有意思的，因为当学完以后就会发现，<strong>布尔代数</strong>其实跟计组没啥关系，准确的说，布尔代数是<strong>数字电路</strong>的基础，而我们计组一旦进入到了使用 <strong>verilog</strong> 的阶段，那么就是大量的<strong>行为建模</strong>而不是<strong>结构建模</strong>了。后面搭建各种CPU，用的都不是布尔代数的思想，也不需要其作为基础。</p>
-<p>另外复习突然发现，忘了<strong>与或式</strong>是啥了，就是这个</p>
-<script type="math/tex; mode=display">
-F = AB + \bar{A}\bar{B}</script><p>那么<strong>或与式</strong>就是这个</p>
-<script type="math/tex; mode=display">
-F = (A+B)(\bar{A} + C)</script>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/f6a8f3b9/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/a6cd8fac/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.png">
-      <meta itemprop="name" content="Thysrael">
-      <meta itemprop="description" content="Can you hear me ?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钟鼓楼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/a6cd8fac/" class="post-title-link" itemprop="url">基物实验-基本实验常识</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-05 14:51:57" itemprop="dateCreated datePublished" datetime="2022-01-05T14:51:57+08:00">2022-01-05</time>
+              <time title="Created: 2022-01-12 20:42:53" itemprop="dateCreated datePublished" datetime="2022-01-12T20:42:53+08:00">2022-01-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -546,7 +449,7 @@ F = (A+B)(\bar{A} + C)</script>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%89%A9%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">基物实验</span></a>
+                  <a href="/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">离散数学</span></a>
                 </span>
             </span>
 
@@ -556,14 +459,14 @@ F = (A+B)(\bar{A} + C)</script>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5.9k</span>
+              <span>351</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>5 mins.</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -575,19 +478,10 @@ F = (A+B)(\bar{A} + C)</script>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>按照说明文件，<strong>考试范围是前三章和开设的所有实验</strong>，往年的选做题目中涉及了很多没有在这个学期开设的实验。</p>
-<p>这个部分主要是讲解基物实验期末考试中选做题实验的基本常识，主要包括：</p>
-<ul>
-<li>测量物体的转动惯量</li>
-<li>示波器及其应用</li>
-<li>开尔文电桥法测电阻</li>
-<li>电位差计及其应用</li>
-<li>分光仪的调整及其应用</li>
-<li>光杠杆法测量弹性模量</li>
-</ul>
+          <p>因为这是在考前最后一天弄的，所以实在是没有时间码字了，就截几张自己觉得可能以后会用到的图，放在这里摆烂就好了。这都不是面向考试了，这都是面向考研复习了。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/a6cd8fac/#more" rel="contents">
+              <a class="btn" href="/posts/f4bb53f7/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -611,7 +505,7 @@ F = (A+B)(\bar{A} + C)</script>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/1cc47d13/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/92313b20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -625,7 +519,7 @@ F = (A+B)(\bar{A} + C)</script>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1cc47d13/" class="post-title-link" itemprop="url">补充数学-卷积</a>
+            <a href="/posts/92313b20/" class="post-title-link" itemprop="url">离散数学-二元关系</a>
         </h2>
 
         <div class="post-meta">
@@ -635,7 +529,102 @@ F = (A+B)(\bar{A} + C)</script>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-01-03 19:25:37" itemprop="dateCreated datePublished" datetime="2022-01-03T19:25:37+08:00">2022-01-03</time>
+              <time title="Created: 2022-01-07 20:21:10" itemprop="dateCreated datePublished" datetime="2022-01-07T20:21:10+08:00">2022-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">离散数学</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>二元关系真的是很难的一章，非常驳杂，而且其实直观理解都很浅薄，只需要记住其本质依然是集合论的分支，证明或者性质探究依然没有脱离集合论的阴影。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/92313b20/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/1b97866c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.png">
+      <meta itemprop="name" content="Thysrael">
+      <meta itemprop="description" content="Can you hear me ?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟鼓楼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1b97866c/" class="post-title-link" itemprop="url">补充数学-斯特林数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-07 20:20:48" itemprop="dateCreated datePublished" datetime="2022-01-07T20:20:48+08:00">2022-01-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -660,7 +649,7 @@ F = (A+B)(\bar{A} + C)</script>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>776</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -679,12 +668,11 @@ F = (A+B)(\bar{A} + C)</script>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>卷积完成的是将两个函数映射成一个函数的过程。这两个函数，既可以是连续的，也可以是离散的。</p>
-<p>可以想见，有卷积得到的函数会同时具有<strong>两个自变量函数</strong>的一些特征。我觉得本质是<strong>相互作用</strong>。</p>
-<p>我听过最优雅的说法是<strong>卡农是一种卷积</strong>，这种说法超神了！在这里贡献一下我的一种说法，<strong>蒹葭是一种卷积</strong>。</p>
+          <p>斯特林数感觉已经偏向于<strong>动态规划</strong>求解了，是一个很漂亮的组合数学，本来这一部分应该关于<strong>生成函数</strong>的介绍，但是因为没时间了，所以就鸽了。</p>
+<p>在这个博文里，不仅介绍斯特林数，还介绍了对组合数学的一种普遍处理。所以还是有很好的参考意义的。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/1cc47d13/#more" rel="contents">
+              <a class="btn" href="/posts/1b97866c/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -708,7 +696,7 @@ F = (A+B)(\bar{A} + C)</script>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/e98703ef/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/22819985/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -722,7 +710,7 @@ F = (A+B)(\bar{A} + C)</script>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/e98703ef/" class="post-title-link" itemprop="url">基物实验-预备知识</a>
+            <a href="/posts/22819985/" class="post-title-link" itemprop="url">离散数学-集合论</a>
         </h2>
 
         <div class="post-meta">
@@ -732,7 +720,7 @@ F = (A+B)(\bar{A} + C)</script>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-01-02 08:46:05" itemprop="dateCreated datePublished" datetime="2022-01-02T08:46:05+08:00">2022-01-02</time>
+              <time title="Created: 2022-01-07 11:43:56" itemprop="dateCreated datePublished" datetime="2022-01-07T11:43:56+08:00">2022-01-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -747,7 +735,7 @@ F = (A+B)(\bar{A} + C)</script>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%89%A9%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">基物实验</span></a>
+                  <a href="/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">离散数学</span></a>
                 </span>
             </span>
 
@@ -757,14 +745,14 @@ F = (A+B)(\bar{A} + C)</script>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
+              <span>3.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -776,10 +764,12 @@ F = (A+B)(\bar{A} + C)</script>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>这个部分也是应该早看，里面有很多可以在实验中应用到的知识，但是我只是复习的时候才看见，太可惜了。<br></p>
+          <p>集合论是后面<strong>关系，函数和图论</strong>的基础，可以说充分体现了离散数学“元数学”的特性。</p>
+<p>一个给定的元素是否属于某一个集合，这是集合论中的一个基本问题。元素与集合之间这种<strong>属于关系</strong>（成员关系），是集合中的一个基本关系。</p>
+<p>这篇博文介绍了一种做题方法，可以说在某些意义上，更加逼近了集合论的本质。我十分满意。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/e98703ef/#more" rel="contents">
+              <a class="btn" href="/posts/22819985/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -802,7 +792,7 @@ F = (A+B)(\bar{A} + C)</script>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/26/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/28/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/26/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/28/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -870,20 +860,20 @@ F = (A+B)(\bar{A} + C)</script>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">189</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -925,8 +915,8 @@ F = (A+B)(\bar{A} + C)</script>
 
 <div class="copyright">
   
-  &copy; 2021-12 – 
-  <span itemprop="copyrightYear">2024</span>
+  &copy; 2021.12.18 – 
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -935,12 +925,12 @@ F = (A+B)(\bar{A} + C)</script>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1.2m</span>
+    <span title="Symbols count total">1.3m</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">18:48</span>
+    <span title="Reading time total">19:15</span>
 </div>
 
         

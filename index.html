@@ -126,17 +126,17 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">29</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">60</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">62</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">189</span></a>
 
   </li>
         <li class="menu-item menu-item-resource">
@@ -213,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/cf617ad0/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/47da48a7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -227,7 +227,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/cf617ad0/" class="post-title-link" itemprop="url">并行计算-并行原语</a>
+            <a href="/posts/47da48a7/" class="post-title-link" itemprop="url">计算机系统-分布式</a>
         </h2>
 
         <div class="post-meta">
@@ -237,14 +237,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2024-09-29 16:42:45" itemprop="dateCreated datePublished" datetime="2024-09-29T16:42:45+08:00">2024-09-29</time>
+              <time title="Created: 2025-01-16 14:49:42" itemprop="dateCreated datePublished" datetime="2025-01-16T14:49:42+08:00">2025-01-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
+                <time title="Modified: 2025-01-23 19:40:12" itemprop="dateModified" datetime="2025-01-23T19:40:12+08:00">2025-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" itemprop="url" rel="index"><span itemprop="name">并行计算</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">计算机系统</span></a>
                 </span>
             </span>
 
@@ -262,14 +262,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5.4k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>5 mins.</span>
+              <span>10 mins.</span>
             </span>
 
         </div>
@@ -281,13 +281,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>在并行编程中，除了“互斥”这个原语外（一般是采用“锁”来实现），还存在“同步（synchronous）”这个原语，这个原语指的是“各个事件按照特定顺序执行”的需求。比如说在生产者消费者模型中，必须要让生产者先生产，消费者才可以进行消费，这就是一种同步行为，是没有办法仅仅依靠锁来实现的。</p>
-<p>当涉及互斥时，涉及到的术语是 <code>lock, unlock, mutex</code> ，而涉及到同步是术语是 <code>wait, signal, notify, barrier</code> 等。之前我只重视了互斥的学习，而对于同步语义，则非常忽视。</p>
-<hr>
-<h2 id="二、互斥"><a href="#二、互斥" class="headerlink" title="二、互斥"></a>二、互斥</h2>
+          <h2 id="一、分布式系统"><a href="#一、分布式系统" class="headerlink" title="一、分布式系统"></a>一、分布式系统</h2><h3 id="1-1-总论"><a href="#1-1-总论" class="headerlink" title="1.1 总论"></a>1.1 总论</h3><p>分布式系统指的是利用多个单体计算机系统构建的多体计算机系统。</p>
+<p>与并行计算不同，分布式系统更侧重于用多个计算实体完成<strong>非常多个</strong>细碎的任务。而并行计算侧重于利用多个计算实体来更快更高效地完成<strong>一个</strong>计算任务。</p>
+<p>分布式系统包括了执行流的分布式和数据的分布式。在北航 OO 课电梯问题中，涉及了多线程，属于是执行流的分布式，这就导致我以为分布式只是执行流的分布式，涉及的问题只是互斥和同步，这是非常片面的。数据的分布式指的是，存在多个数据副本，cache 就是一种数据分布式的实体。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/cf617ad0/#more" rel="contents">
+              <a class="btn" href="/posts/47da48a7/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -311,7 +310,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/cbf91d56/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/670dae13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -325,7 +324,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/cbf91d56/" class="post-title-link" itemprop="url">海边拾贝-ExtMem</a>
+            <a href="/posts/670dae13/" class="post-title-link" itemprop="url">计算机系统-虚拟化</a>
         </h2>
 
         <div class="post-meta">
@@ -335,14 +334,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2024-08-26 20:31:23" itemprop="dateCreated datePublished" datetime="2024-08-26T20:31:23+08:00">2024-08-26</time>
+              <time title="Created: 2025-01-02 17:48:54" itemprop="dateCreated datePublished" datetime="2025-01-02T17:48:54+08:00">2025-01-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
+                <time title="Modified: 2025-01-23 19:40:12" itemprop="dateModified" datetime="2025-01-23T19:40:12+08:00">2025-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -350,7 +349,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B5%B7%E8%BE%B9%E6%8B%BE%E8%B4%9D/" itemprop="url" rel="index"><span itemprop="name">海边拾贝</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">计算机系统</span></a>
                 </span>
             </span>
 
@@ -360,7 +359,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.9k</span>
+              <span>3.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -379,26 +378,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<p>本文提出了一种用户态缺页异常处理框架，可以轻松适配不同的处理策略，适用于高并发环境。其亮点在于：</p>
-<ul>
-<li>框架的易用性：<ul>
-<li>基于 Linux 的 Semi-Microkernel 设计</li>
-<li>透明</li>
-</ul>
-</li>
-<li>性能：<ul>
-<li>采用了微内核和外核思想中的 upcall 设计</li>
-<li>采用了先进的异步批处理 IO 后端 io_ring</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><h3 id="1-1-特化内存管理"><a href="#1-1-特化内存管理" class="headerlink" title="1.1 特化内存管理"></a>1.1 特化内存管理</h3><p>从软件层去看，目前内存密集型应用越来越多，如 TB 级的机器学习、大型图计算，内存数据库等。从硬件层去看，硬件新特性有很多，比如分离式内存、分层内存等。这些新的变化都对内存管理策略提出了新的挑战。</p>
-<p>通用操作系统的内存管理策略并不适用于内存密集型应用，也不能针对性的利用硬件新特性。有研究表明最大的系统瓶颈是内存管理而不是设备带宽。</p>
+          <h2 id="一、CPU-虚拟化"><a href="#一、CPU-虚拟化" class="headerlink" title="一、CPU 虚拟化"></a>一、CPU 虚拟化</h2><h3 id="2-1-背景"><a href="#2-1-背景" class="headerlink" title="2.1 背景"></a>2.1 背景</h3><p>CPU 虚拟化范畴还挺多的，但是我们这里应该指的不包括不同 ISA 的虚拟化，而只是 CPU 的虚拟化，也就是虚拟出来的 CPU 和原本的 CPU 具有相同的 ISA 。</p>
+<h3 id="2-2-Trap-amp-Emulate"><a href="#2-2-Trap-amp-Emulate" class="headerlink" title="2.2 Trap &amp; Emulate"></a>2.2 Trap &amp; Emulate</h3><p>为了虚拟化出多个 CPU，我们让虚拟的 OS 跑在用户态，也就是如下结构：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/cbf91d56/#more" rel="contents">
+              <a class="btn" href="/posts/670dae13/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -422,7 +406,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/94e7864c/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/15ec58e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -436,7 +420,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/94e7864c/" class="post-title-link" itemprop="url">面向对象-设计模式</a>
+            <a href="/posts/15ec58e/" class="post-title-link" itemprop="url">计算机系统-文件系统</a>
         </h2>
 
         <div class="post-meta">
@@ -446,14 +430,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2024-08-22 14:29:00" itemprop="dateCreated datePublished" datetime="2024-08-22T14:29:00+08:00">2024-08-22</time>
+              <time title="Created: 2025-01-02 17:33:50" itemprop="dateCreated datePublished" datetime="2025-01-02T17:33:50+08:00">2025-01-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:01:00" itemprop="dateModified" datetime="2024-10-22T20:01:00+08:00">2024-10-22</time>
+                <time title="Modified: 2025-01-23 19:40:12" itemprop="dateModified" datetime="2025-01-23T19:40:12+08:00">2025-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -461,105 +445,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">面向对象</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>5 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>设计模式是一个工程问题，它不能为某个问题提供具体的答案，它只能让答案写得好看一些。</p>
-<p>更进一步地说，设计模式是用于解决代码复杂度高（不是算法复杂度）的问题，这会引发难以阅读，难以维护等伴生问题。当代码量小，复杂度低，没有什么维护需求的时候（比如说科研代码），其实是没有必要采用规范的设计模式的。</p>
-<p>我个人学习设计模式，并不是为了写代码（因为我写的代码就是科研代码），而是为了更好的阅读代码，因为大型工程代码都会或多或少遵循设计模式的思路。</p>
-<p>很多设计模式解决的复杂度问题，是客观存在的，认识这些问题有助于设计出更加简洁健壮的架构；但是有些问题可能只是类似 Java 等语言表述能力不够所导致的，不用太较真。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/94e7864c/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/af364ce6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.png">
-      <meta itemprop="name" content="Thysrael">
-      <meta itemprop="description" content="Can you hear me ?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钟鼓楼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/af364ce6/" class="post-title-link" itemprop="url">计算机组成-乱序</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-08-10 19:50:16" itemprop="dateCreated datePublished" datetime="2024-08-10T19:50:16+08:00">2024-08-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:01:00" itemprop="dateModified" datetime="2024-10-22T20:01:00+08:00">2024-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" itemprop="url" rel="index"><span itemprop="name">计算机组成</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">计算机系统</span></a>
                 </span>
             </span>
 
@@ -588,13 +474,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>乱序指的是指令并不按照顺序执行，所以这个概念比较接近软件编程中的“异步”概念（强调对于顺序时序的破坏）。而我之前似乎一直把它和“并行”挂钩（强调对于共享资源的争用）。这种认识倒也不算是错误，目前学了一圈下来，感觉其实和两个概念都有关系。</p>
-<p>在顺序模型下，指令是一条条阻塞执行的，必须前一条指令执行完，才能执行后一条指令。那么如果前一条指令非常花时间，那么后一条指令就只能阻塞等待。这个问题是用流水线解决不了的。流水线中的指令也需要顺序执行。而乱序执行就打破了这种顺序执行的阻塞性，使得前序和后序指令可以并行执行。</p>
-<hr>
-<h2 id="二、冒险（hazard）"><a href="#二、冒险（hazard）" class="headerlink" title="二、冒险（hazard）"></a>二、冒险（hazard）</h2>
+          <h2 id="一、数据结构"><a href="#一、数据结构" class="headerlink" title="一、数据结构"></a>一、数据结构</h2><h3 id="1-1-Inode"><a href="#1-1-Inode" class="headerlink" title="1.1 Inode"></a>1.1 Inode</h3><h4 id="1-1-1-整体结构"><a href="#1-1-1-整体结构" class="headerlink" title="1.1.1 整体结构"></a>1.1.1 整体结构</h4><p>Inode FS 被分为了 5 个区域“</p>
+<p><img src="/posts/15ec58e/image-20250102215509118.png" alt="image-20250102215509118" style="zoom:40%;"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/af364ce6/#more" rel="contents">
+              <a class="btn" href="/posts/15ec58e/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -618,7 +502,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/71c079c7/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/cd771bfa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -632,7 +516,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/71c079c7/" class="post-title-link" itemprop="url">海边拾贝-VeriSMo</a>
+            <a href="/posts/cd771bfa/" class="post-title-link" itemprop="url">计算机系统-总论</a>
         </h2>
 
         <div class="post-meta">
@@ -642,14 +526,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2024-07-29 09:25:40" itemprop="dateCreated datePublished" datetime="2024-07-29T09:25:40+08:00">2024-07-29</time>
+              <time title="Created: 2025-01-02 17:33:34" itemprop="dateCreated datePublished" datetime="2025-01-02T17:33:34+08:00">2025-01-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:59" itemprop="dateModified" datetime="2024-10-22T20:00:59+08:00">2024-10-22</time>
+                <time title="Modified: 2025-01-23 19:40:12" itemprop="dateModified" datetime="2025-01-23T19:40:12+08:00">2025-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -657,7 +541,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B5%B7%E8%BE%B9%E6%8B%BE%E8%B4%9D/" itemprop="url" rel="index"><span itemprop="name">海边拾贝</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">计算机系统</span></a>
                 </span>
             </span>
 
@@ -667,14 +551,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>7.5k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>7 mins.</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -686,17 +570,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="/posts/71c079c7/1600x900_1591431860952_2048x1152_logo.jpg" alt="A RaiPlay learning il Verismo e i suoi autori - RAI Ufficio Stampa"></p>
-<p>VeriSMo 的可信基只包括硬件和它自己（VM），剔除了对于 Hypervisor 的信任。传统的 VM 的安全服务是由 Hypervisor 负责的，如果认为 Hypervisor 是不可信的，那么就不能由它来提供安全服务。AMD 提供了新的安全架构 SEV-SNP，它为在 VM 中独立实现安全服务提供了支持，VeriSMO 就利用了这个硬件特性。</p>
-<p>除了利用新的硬件安全特性外，VeriSMo 在开发时完成了形式化验证来确保安全性。VeriSMo 的开发语言是 Rust，已经确保了部分的内存安全性（也就是 Rust Checker 承担了部分形式化验证的任务），距离完全的形式化验证还有两个挑战：</p>
-<ol>
-<li>因为 Hypervisor 不可信任，所以 Hypervisor 可以打断 VM 的执行并修改硬件状态，这种并行无法简单验证。</li>
-<li>开发 VeriSMo 需要使用 Unsafe Rust，Rust Checker 无法验证这种情况。</li>
-</ol>
-<p>为了解决挑战 1，VeriSMo 将验证拆分成了 2 层，上层为机器模型层（Machine Model），用 model verify 专门约束 Hypervisor 的行为，下层为实现层（Implement），用于解决排除了 Hypervisor 干扰后的 VeriSMo 本身的验证问题。</p>
+          <blockquote>
+<p>那是 2023 年的夏天，楠神走出门，看向焦急等待的杰哥和我，问我们：</p>
+<p>“你们知道“系统”和“体系结构”的区别吗？”</p>
+</blockquote>
+<h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>计算机系统这个系列，是我作为一名方向是 system 的研究生的，基于 IPADS 实验室开设的“计算机系统原理”等课程，整理而成的，并不保证正确性，因为 system 实在是浩如烟海，而我又太菜了。</p>
+<p>在这篇博文里，我想谈谈我心目中的 system 是什么，这并不是 IPADS 课程的观点。</p>
+<hr>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/71c079c7/#more" rel="contents">
+              <a class="btn" href="/posts/cd771bfa/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -720,7 +603,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/7efac32a/">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/9925eca3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.png">
@@ -734,7 +617,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/7efac32a/" class="post-title-link" itemprop="url">信息安全-基本概念</a>
+            <a href="/posts/9925eca3/" class="post-title-link" itemprop="url">吃喝玩乐-三周年</a>
         </h2>
 
         <div class="post-meta">
@@ -744,14 +627,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2024-07-10 20:51:28" itemprop="dateCreated datePublished" datetime="2024-07-10T20:51:28+08:00">2024-07-10</time>
+              <time title="Created: 2024-12-18 17:55:40" itemprop="dateCreated datePublished" datetime="2024-12-18T17:55:40+08:00">2024-12-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-22 20:00:58" itemprop="dateModified" datetime="2024-10-22T20:00:58+08:00">2024-10-22</time>
+                <time title="Modified: 2025-01-23 19:40:12" itemprop="dateModified" datetime="2025-01-23T19:40:12+08:00">2025-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -759,7 +642,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">信息安全</span></a>
+                  <a href="/categories/%E5%90%83%E5%96%9D%E7%8E%A9%E4%B9%90/" itemprop="url" rel="index"><span itemprop="name">吃喝玩乐</span></a>
                 </span>
             </span>
 
@@ -769,7 +652,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.5k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -788,16 +671,119 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、安全目标"><a href="#一、安全目标" class="headerlink" title="一、安全目标"></a>一、安全目标</h2><h3 id="1-1-总论"><a href="#1-1-总论" class="headerlink" title="1.1 总论"></a>1.1 总论</h3><p>系统安全有 3 个目标：</p>
-<ul>
-<li><strong>机密性（Confidentiality）</strong>：又称隐私性（Privacy），是指数据不能被未授权的主体窃取（即恶意读操作）。</li>
-<li><strong>完整性（Integrity）</strong>：是指数据不能被未授权的主体篡改（即恶意写操作）。</li>
-<li><strong>可用性（Availability）</strong>：是指数据能够被授权主体正常访问。</li>
-</ul>
-<p>合称 CIA 。</p>
+          <h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>今天是 2024 年 12 月 18 日，距离我在北航新主楼 F534 的夜晚写下这个博客的 About 板块已经过去了 3 年时间，时间过得真是太快了。</p>
+<p>这个博客能够坚持 3 年时间，最重要的原因是有人（当然我希望小姑娘多一些）去看我的博客，博客的读者是我更新的最大动力。感谢读者们的支持和反馈，没有你们就没有“钟鼓楼”。</p>
+<p>当时我在博客里写了“我没有报六级，也没有报冬奥会志愿者，没有小姑娘需要陪”，三年后，我居然也还是“没有报六级，也没有报冬奥会志愿者，没有小姑娘需要陪”的状态，也算是不忘初心了，乐。</p>
+<h2 id="二、回顾"><a href="#二、回顾" class="headerlink" title="二、回顾"></a>二、回顾</h2>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/posts/7efac32a/#more" rel="contents">
+              <a class="btn" href="/posts/9925eca3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thysrael.github.io/posts/2d78b508/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.png">
+      <meta itemprop="name" content="Thysrael">
+      <meta itemprop="description" content="Can you hear me ?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钟鼓楼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2d78b508/" class="post-title-link" itemprop="url">沟通交流-学术写作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-11-28 10:07:14" itemprop="dateCreated datePublished" datetime="2024-11-28T10:07:14+08:00">2024-11-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-01-23 19:40:12" itemprop="dateModified" datetime="2025-01-23T19:40:12+08:00">2025-01-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B2%9F%E9%80%9A%E4%BA%A4%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">沟通交流</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>这本书是对《Science Research Writing For Non-Native Speakers of English》的总结梳理。这本书分为多个章节，每个章节对应一个论文写作里的部分。在每个章节内部，又有如下几个部分：</p>
+<ol>
+<li>介绍一下这个章节在整体文章中的作用</li>
+<li>展示一篇例文</li>
+<li>介绍一些基础的英语语法和词汇</li>
+<li>对例文结构进行分析（分解成小组件），也就是他说的 model</li>
+<li>对 model 进行一些心法层面的阐述，也就是他说的 key</li>
+<li>按照 model 和 key 介绍一些固定词汇、句式和搭配，也就是他说的 vocabulary</li>
+<li>最后让你自己写一个文章</li>
+</ol>
+<p>很多东西都是实践性质的，并非专业知识本身。所以如果总结的话，其实可以按照 model 的形式来组织 vocabulary ，其他的东西（比如例文、基础语法、动手实践）都可以省略，结构清晰。</p>
+<p>因为时间问题，所以我会逐步更新这篇博文。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2d78b508/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -820,7 +806,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -888,20 +874,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">189</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -943,8 +929,8 @@
 
 <div class="copyright">
   
-  &copy; 2021-12 – 
-  <span itemprop="copyrightYear">2024</span>
+  &copy; 2021.12.18 – 
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -953,12 +939,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1.2m</span>
+    <span title="Symbols count total">1.3m</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">18:48</span>
+    <span title="Reading time total">19:15</span>
 </div>
 
         
