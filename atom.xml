@@ -6,7 +6,7 @@
   <link href="https://thysrael.github.io/atom.xml" rel="self"/>
   
   <link href="https://thysrael.github.io/"/>
-  <updated>2025-01-30T14:24:19.938Z</updated>
+  <updated>2025-01-30T16:33:42.453Z</updated>
   <id>https://thysrael.github.io/</id>
   
   <author>
@@ -21,11 +21,29 @@
     <link href="https://thysrael.github.io/posts/7dc4ea13/"/>
     <id>https://thysrael.github.io/posts/7dc4ea13/</id>
     <published>2025-01-30T14:24:19.000Z</published>
-    <updated>2025-01-30T14:24:19.938Z</updated>
+    <updated>2025-01-30T16:33:42.453Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、总论"><a href="#一、总论" class="headerlink" title="一、总论"></a>一、总论</h2><p>当我们提到大模型 LLM 的时候，总是和 Transformer 这种架构联系在一起，似乎只有使用了 Transformer 架构的深度学习模型才配叫作大模型。</p><p>不过以我目前浅薄的认知，我倒觉得 Transformer 并不是 LLM 的核心特征，因为 LLM 的算法变化很快，Transformer 从 2017 年到现在有了多种变体，也有完全不采用 Transformer 架构的 AI。我个人感觉 LLM 的核心有两点：</p><ul><li>模型参数极大：我们认为模型参数越多，模型就越智能。这是“涌现”的一种具体体现。</li><li>采用“预训练-微调-推理”范式：这种范式使得模型的通用性得到了增强，划分了不同的生态位。</li></ul><p>我希望在下文中记录一下关于 LLM 或者 Foundation Model 的基础知识，以避免被这个时代抛下太久。</p><hr><h2 id="二、数学基础"><a href="#二、数学基础" class="headerlink" title="二、数学基础"></a>二、数学基础</h2><h3 id="2-1-GEMM-时间复杂度"><a href="#2-1-GEMM-时间复杂度" class="headerlink" title="2.1 GEMM 时间复杂度"></a>2.1 GEMM 时间复杂度</h3><h3 id="2-2-反向传播求导"><a href="#2-2-反向传播求导" class="headerlink" title="2.2 反向传播求导"></a>2.2 反向传播求导</h3><h3 id="2-3-IM2Col"><a href="#2-3-IM2Col" class="headerlink" title="2.3 IM2Col"></a>2.3 IM2Col</h3><h2 id="三、Transformer"><a href="#三、Transformer" class="headerlink" title="三、Transformer"></a>三、Transformer</h2>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、总论&quot;&gt;&lt;a href=&quot;#一、总论&quot; class=&quot;headerlink&quot; title=&quot;一、总论&quot;&gt;&lt;/a&gt;一、总论&lt;/h2&gt;&lt;p&gt;当我们提到大模型 LLM 的时候，总是和 Transformer 这种架构联系在一起，似乎只有使用了 Transformer 架构的深度学习模型才配叫作大模型。&lt;/p&gt;
+&lt;p&gt;不过以我目前浅薄的认知，我倒觉得 Transformer 并不是 LLM 的核心特征，因为 LLM 的算法变化很快，Transformer 从 2017 年到现在有了多种变体，也有完全不采用 Transformer 架构的 AI。我个人感觉 LLM 的核心有两点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;模型参数极大：我们认为模型参数越多，模型就越智能。这是“涌现”的一种具体体现。&lt;/li&gt;
+&lt;li&gt;采用“预训练-微调-推理”范式：这种范式使得模型的通用性得到了增强，划分了不同的生态位。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我希望在下文中记录一下关于 LLM 或者 Foundation Model 的基础知识，以避免被这个时代抛下太久。&lt;/p&gt;</summary>
     
     
     
+    <category term="Sys4AI" scheme="https://thysrael.github.io/categories/Sys4AI/"/>
     
+    
+    <category term="直观理解" scheme="https://thysrael.github.io/tags/%E7%9B%B4%E8%A7%82%E7%90%86%E8%A7%A3/"/>
+    
+    <category term="S9假期" scheme="https://thysrael.github.io/tags/S9%E5%81%87%E6%9C%9F/"/>
+    
+    <category term="Sys4AI" scheme="https://thysrael.github.io/tags/Sys4AI/"/>
     
   </entry>
   

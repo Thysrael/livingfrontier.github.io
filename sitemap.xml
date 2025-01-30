@@ -1685,7 +1685,7 @@
   </url>
   
   <url>
-    <loc>https://thysrael.github.io/posts/a860c828/</loc>
+    <loc>https://thysrael.github.io/posts/665eae38/</loc>
     
     <lastmod>2024-10-22</lastmod>
     
@@ -1694,7 +1694,7 @@
   </url>
   
   <url>
-    <loc>https://thysrael.github.io/posts/665eae38/</loc>
+    <loc>https://thysrael.github.io/posts/a860c828/</loc>
     
     <lastmod>2024-10-22</lastmod>
     
@@ -1883,6 +1883,20 @@
   
   <url>
     <loc>https://thysrael.github.io/tags/Ruby%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thysrael.github.io/tags/S9%E5%81%87%E6%9C%9F/</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thysrael.github.io/tags/Sys4AI/</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2256,6 +2270,13 @@
   
   <url>
     <loc>https://thysrael.github.io/categories/Ruby%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thysrael.github.io/categories/Sys4AI/</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
