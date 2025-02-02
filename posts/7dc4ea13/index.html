@@ -31,7 +31,7 @@
 <meta property="og:description" content="一、总论当我们提到大模型 LLM 的时候，总是和 Transformer 这种架构联系在一起，似乎只有使用了 Transformer 架构的深度学习模型才配叫作大模型。 不过以我目前浅薄的认知，我倒觉得 Transformer 并不是 LLM 的核心特征，因为 LLM 的算法变化很快，Transformer 从 2017 年到现在有了多种变体，也有完全不采用 Transformer 架构的 AI。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-01-30T14:24:19.000Z">
-<meta property="article:modified_time" content="2025-02-02T06:35:09.877Z">
+<meta property="article:modified_time" content="2025-02-02T07:24:23.706Z">
 <meta property="article:author" content="Thysrael">
 <meta property="article:tag" content="直观理解">
 <meta property="article:tag" content="S9假期">
@@ -248,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-02-02 14:35:09" itemprop="dateModified" datetime="2025-02-02T14:35:09+08:00">2025-02-02</time>
+                <time title="Modified: 2025-02-02 15:24:23" itemprop="dateModified" datetime="2025-02-02T15:24:23+08:00">2025-02-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,7 +273,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>8.9k</span>
+              <span>9.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -309,13 +309,13 @@
 </ul>
 <h4 id="2-1-2-链式法则"><a href="#2-1-2-链式法则" class="headerlink" title="2.1.2 链式法则"></a>2.1.2 链式法则</h4><p>在标量世界中，对于 $z = g(y), y = f(x)$ ，链式法则通常写做：</p>
 <script type="math/tex; mode=display">
-\frac{\part z}{\part x} = \frac{\part z}{\part y} \frac{\part y}{\part x}</script><p>那么如果 $x$ 不再是标量，而是一个向量 $X$ 怎么办，那么我们依然可以列出来 $X$ 的任意分量 $x_i$ ，有：</p>
+\frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} \frac{\partial y}{\partial x}</script><p>那么如果 $x$ 不再是标量，而是一个向量 $X$ 怎么办，那么我们依然可以列出来 $X$ 的任意分量 $x_i$ ，有：</p>
 <script type="math/tex; mode=display">
-\frac{\part z}{\part x_i} = \frac{\part z}{\part y} \frac{\part y}{\part x_i}</script><p>显然如果 $X$ 是一个矩阵，那么情形也是类似的，对于任意分量 $x_{ij}$ ，有：</p>
+\frac{\partial z}{\partial x_i} = \frac{\partial z}{\partial y} \frac{\partial y}{\partial x_i}</script><p>显然如果 $X$ 是一个矩阵，那么情形也是类似的，对于任意分量 $x_{ij}$ ，有：</p>
 <script type="math/tex; mode=display">
-\frac{\part z}{\part x_{ij}} = \frac{\part z}{\part y} \frac{\part y}{\part x_{ij}}</script><p>上面的都很简单且显然，那么我们可以思考一下如果 $y$ 不再是标量，而是一个 $N$ 维向量 $Y$ 怎么办？那么 $X$ 的某个分量 $x_i$ 就可以通过影响 $Y$ 的所有分量 $y_1, y_2, \dots, y_n$ 来影响 $z$ ，所以当我们求 $z$ 对 $x_i$ 的偏导的时候，要考虑到所有的 $y_k$ ，所以其形式如下：</p>
+\frac{\partial z}{\partial x_{ij}} = \frac{\partial z}{\partial y} \frac{\partial y}{\partial x_{ij}}</script><p>上面的都很简单且显然，那么我们可以思考一下如果 $y$ 不再是标量，而是一个 $N$ 维向量 $Y$ 怎么办？那么 $X$ 的某个分量 $x_i$ 就可以通过影响 $Y$ 的所有分量 $y_1, y_2, \dots, y_n$ 来影响 $z$ ，所以当我们求 $z$ 对 $x_i$ 的偏导的时候，要考虑到所有的 $y_k$ ，所以其形式如下：</p>
 <script type="math/tex; mode=display">
-\frac{\part z}{\part x_{i}} = \sum_{k = 1} ^ N \frac{\part z}{\part y_k} \frac{\part y_k}{\part x_{i}}</script><p>这个分量形式也可以被整理成更加规整的矩阵乘法形式（毕竟上面就是乘加运算），也就是如下所示：</p>
+\frac{\partial z}{\partial x_{i}} = \sum_{k = 1} ^ N \frac{\partial z}{\partial y_k} \frac{\partial y_k}{\partial x_{i}}</script><p>这个分量形式也可以被整理成更加规整的矩阵乘法形式（毕竟上面就是乘加运算），也就是如下所示：</p>
 <script type="math/tex; mode=display">
 \frac{\partial z}{\partial \mathbf{X}} = \frac{\partial z}{\partial \mathbf{Y}} \frac{\partial Y}{\partial \mathbf{X}}
 
@@ -335,9 +335,9 @@
 \end{bmatrix}</script><p>右边的那个方阵，就是传说中的雅各比矩阵。</p>
 <p>我们在“规律”这一节探讨的求导矩阵的形状问题，其实核心就在于求导矩阵的形状，可以在链式法则中直接应用，而不需要经过大量的 reshape。</p>
 <p>那如果 $X$ 和 $Y$ 有任一方是一个矩阵怎么办？可以想见，此时的雅各比矩阵就不再是二维的了，而是三维张量或者四维张量了。此时就很难整理成矩阵乘法的形式了，但是分量求和公式依然成立。</p>
-<p>而在 ML 实践中，常常因为有些 $\frac{\part z}{\part y<em>k} \frac{\part y_k}{\part x</em>{i}}$ 项为零，进而可以简化高维张量运算。我们来举个例子，以 ML 中常见的全连接层 $Y = WX$ 为例（省略了偏置量 $B$），其中 $X$ 是 $N$ 维向量，$Y$ 是 $M$ 维向量，$W$ 是 $M \times N$ 维矩阵。那么在反向传播中，就有：</p>
+<p>而在 ML 实践中，常常因为有些 $\frac{\partial z}{\partial y<em>k} \frac{\partial y_k}{\partial x</em>{i}}$ 项为零，进而可以简化高维张量运算。我们来举个例子，以 ML 中常见的全连接层 $Y = WX$ 为例（省略了偏置量 $B$），其中 $X$ 是 $N$ 维向量，$Y$ 是 $M$ 维向量，$W$ 是 $M \times N$ 维矩阵。那么在反向传播中，就有：</p>
 <script type="math/tex; mode=display">
-\frac{\part Y}{\part W} = 
+\frac{\partial Y}{\partial W} = 
 \begin{bmatrix}
 \begin{bmatrix}
 \frac{\partial y_1}{\partial w_{11}} & \frac{\partial y_1}{\partial w_{12}} & \cdots & \frac{\partial y_1}{\partial w_{1n}} \\
@@ -372,7 +372,7 @@
 <script type="math/tex; mode=display">
 y_i = \sum_{j = 0}^N w_{ij} x_j</script><p>也就是说，对于特定的 $i$， $y_i$ 不和 $W$ 的所有分量有关，而是只跟 $W$ 第 $i$ 行分量有关，也就是：</p>
 <script type="math/tex; mode=display">
-\frac{\part Y}{\part W} = 
+\frac{\partial Y}{\partial W} = 
 \begin{bmatrix}
 \begin{bmatrix}
 \frac{\partial y_1}{\partial w_{11}} & \frac{\partial y_1}{\partial w_{12}} & \cdots & \frac{\partial y_1}{\partial w_{1n}} \\
@@ -436,13 +436,13 @@ x_1 & x_2 & \cdots & x_n \\
 \vdots & \vdots & \ddots & \vdots \\
 x_1 & x_2 & \cdots & x_n \\
 \end{bmatrix}
-\end{bmatrix}</script><p>其实我们都没有必要再关注这个复杂的 $\frac{\part Y}{\part W}$ 的稀疏性质了，我们直接回归本源，我们的核心目的是求解损失函数 $l$ 对 $W$ 的导数，那么按照原本来说，有：</p>
+\end{bmatrix}</script><p>其实我们都没有必要再关注这个复杂的 $\frac{\partial Y}{\partial W}$ 的稀疏性质了，我们直接回归本源，我们的核心目的是求解损失函数 $l$ 对 $W$ 的导数，那么按照原本来说，有：</p>
 <script type="math/tex; mode=display">
-\frac{\part l}{\part w_{ij}} = \sum_{k = 0}^M \frac{\part l}{\part y_k} \frac{\part y_k}{\part w_{ij}}</script><p>又因为在 $i,j$ 确定的情况下， $w_{ij}$ 只会影响 $Y$ 的 $y_i$ 分量，所以上面这个式子就会变化成：</p>
+\frac{\partial l}{\partial w_{ij}} = \sum_{k = 0}^M \frac{\partial l}{\partial y_k} \frac{\partial y_k}{\partial w_{ij}}</script><p>又因为在 $i,j$ 确定的情况下， $w_{ij}$ 只会影响 $Y$ 的 $y_i$ 分量，所以上面这个式子就会变化成：</p>
 <script type="math/tex; mode=display">
-\frac{\part l}{\part w_{ij}} = \sum_{k = 0}^M \frac{\part l}{\part y_k} \frac{\part y_k}{\part w_{ij}} = \frac{\part l}{\part y_i}\frac{\part y_i}{\part w_{ij}} = \frac{\part l}{\part y_i}x_j</script><p>有了这样的化简后，就可以被整理成新的向量乘法，如下所示：</p>
+\frac{\partial l}{\partial w_{ij}} = \sum_{k = 0}^M \frac{\partial l}{\partial y_k} \frac{\partial y_k}{\partial w_{ij}} = \frac{\partial l}{\partial y_i}\frac{\partial y_i}{\partial w_{ij}} = \frac{\partial l}{\partial y_i}x_j</script><p>有了这样的化简后，就可以被整理成新的向量乘法，如下所示：</p>
 <script type="math/tex; mode=display">
-\frac{\part l}{\part W} = \frac{\part l}{\part Y} X^T</script><p>再次变得简洁优雅。</p>
+\frac{\partial l}{\partial W} = \frac{\partial l}{\partial Y} X^T</script><p>再次变得简洁优雅。</p>
 <p>这件事情很启发我，我之前学习反向传播时，太关注复杂的神经网络的梯度的张量表示了，动不动就会出现三维或者四维的张量，然后陷入停滞。而实际上，就算在数学上产生了这些拦路虎，我们也并不在意，因为这些高维张量本来就不是我们的目的，它只是链式求和公式的一种形式。我们会重新回到链式求和公式，来构建更加简单的矩阵乘法，而不是固守高维张量。</p>
 <h4 id="2-1-3-标量-张量"><a href="#2-1-3-标量-张量" class="headerlink" title="2.1.3 标量-张量"></a>2.1.3 标量-张量</h4><p>标量对张量进行求导时，生成的导数矩阵和张量（无论张量是标量、向量还是矩阵）的形状完全相同。比如说对于一个 $N$ 维列向量 $X$ ，其导数矩阵如下所示：</p>
 <script type="math/tex; mode=display">
@@ -460,9 +460,9 @@ x_1 & x_2 & \cdots & x_n \\
 \frac{\partial y}{\partial x_{21}} & \frac{\partial y}{\partial x_{22}} & \cdots & \frac{\partial y}{\partial x_{2n}} \\
 \vdots & \vdots & \ddots & \vdots \\
 \frac{\partial y}{\partial x_{m1}} & \frac{\partial y}{\partial x_{m2}} & \cdots & \frac{\partial y}{\partial x_{mn}}
-\end{bmatrix}</script><h4 id="2-1-4-张量-张量"><a href="#2-1-4-张量-张量" class="headerlink" title="2.1.4 张量-张量"></a>2.1.4 张量-张量</h4><p>当因变量是张量的时候，就是对于因变量张量的每一个分量都应用一遍上文介绍的“标量-张量”方法。因变量分量会组成导数张量的外层维度，每个元素都是一个“标量-张量”导数矩阵。我们举个例子，有 $2 \times 3$ 维的向量 $X$ 和 $3 \times 2$ 维的 $Y$ 相乘得到 $2 \times 2$ 维的 $Z$ ，对于 $\frac{\part Z}{\part X}$ 有：</p>
+\end{bmatrix}</script><h4 id="2-1-4-张量-张量"><a href="#2-1-4-张量-张量" class="headerlink" title="2.1.4 张量-张量"></a>2.1.4 张量-张量</h4><p>当因变量是张量的时候，就是对于因变量张量的每一个分量都应用一遍上文介绍的“标量-张量”方法。因变量分量会组成导数张量的外层维度，每个元素都是一个“标量-张量”导数矩阵。我们举个例子，有 $2 \times 3$ 维的向量 $X$ 和 $3 \times 2$ 维的 $Y$ 相乘得到 $2 \times 2$ 维的 $Z$ ，对于 $\frac{\partial Z}{\partial X}$ 有：</p>
 <script type="math/tex; mode=display">
-\frac{\part Z}{\part X} =
+\frac{\partial Z}{\partial X} =
 
 \begin{bmatrix}
 \frac{\partial z_{11}}{\partial X} & \frac{\partial z_{12}}{\partial X} \\
@@ -508,7 +508,7 @@ J = \frac{\partial \mathbf{Y}}{\partial \mathbf{X}} =
 <p>对于一个 $M \times K$ 的矩阵与一个 $K \times N$ 的矩阵进行 GEMM 运算，FLOPS 是 $2 MNK$ 。</p>
 <p>这是因为结果矩阵中有 $MN$ 个元素，而每个元素都是一个 $K$ 维行向量和一个 $K$ 维列向量的点积结果。而点积需要进行 $K$ 次乘法操作和 $K - 1$ 次加法操作，故总共需要约 $2K$ 次操作（其实我觉得这里存疑，因为如果是 MAC，Multi-Add 的话，其实点积只需要 $K$ 次操作）。进而 GEMM 需要 $2MNK$ 次操作。 </p>
 <p>总之在 GEMM 中，FLOPS 分别是 3 个维度的一次函数。</p>
-<h3 id="2-3-IM2Col"><a href="#2-3-IM2Col" class="headerlink" title="2.3 IM2Col"></a>2.3 IM2Col</h3><h2 id="三、Transformer"><a href="#三、Transformer" class="headerlink" title="三、Transformer"></a>三、Transformer</h2>
+<h4 id="2-2-2-frac-partial-l-partial-y"><a href="#2-2-2-frac-partial-l-partial-y" class="headerlink" title="2.2.2 $\frac{\partial l}{\partial y}$"></a>2.2.2 $\frac{\partial l}{\partial y}$</h4><h3 id="2-3-IM2Col"><a href="#2-3-IM2Col" class="headerlink" title="2.3 IM2Col"></a>2.3 IM2Col</h3><h2 id="三、Transformer"><a href="#三、Transformer" class="headerlink" title="三、Transformer"></a>三、Transformer</h2>
     </div>
 
     
@@ -597,7 +597,7 @@ J = \frac{\partial \mathbf{Y}}{\partial \mathbf{X}} =
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%80%BB%E8%AE%BA"><span class="nav-text">一、总论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-text">二、数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%BC%A0%E9%87%8F%E6%B1%82%E5%AF%BC"><span class="nav-text">2.1 张量求导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-%E8%A7%84%E5%BE%8B"><span class="nav-text">2.1.1 规律</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99"><span class="nav-text">2.1.2 链式法则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-%E6%A0%87%E9%87%8F-%E5%BC%A0%E9%87%8F"><span class="nav-text">2.1.3 标量-张量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-4-%E5%BC%A0%E9%87%8F-%E5%BC%A0%E9%87%8F"><span class="nav-text">2.1.4 张量-张量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-FLOPS"><span class="nav-text">2.2 FLOPS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-GEMM"><span class="nav-text">2.2.1 GEMM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-IM2Col"><span class="nav-text">2.3 IM2Col</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Transformer"><span class="nav-text">三、Transformer</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%80%BB%E8%AE%BA"><span class="nav-text">一、总论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-text">二、数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%BC%A0%E9%87%8F%E6%B1%82%E5%AF%BC"><span class="nav-text">2.1 张量求导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-%E8%A7%84%E5%BE%8B"><span class="nav-text">2.1.1 规律</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99"><span class="nav-text">2.1.2 链式法则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-%E6%A0%87%E9%87%8F-%E5%BC%A0%E9%87%8F"><span class="nav-text">2.1.3 标量-张量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-4-%E5%BC%A0%E9%87%8F-%E5%BC%A0%E9%87%8F"><span class="nav-text">2.1.4 张量-张量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-FLOPS"><span class="nav-text">2.2 FLOPS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-GEMM"><span class="nav-text">2.2.1 GEMM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-frac-partial-l-partial-y"><span class="nav-text">2.2.2 $\frac{\partial l}{\partial y}$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-IM2Col"><span class="nav-text">2.3 IM2Col</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Transformer"><span class="nav-text">三、Transformer</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -683,7 +683,7 @@ J = \frac{\partial \mathbf{Y}}{\partial \mathbf{X}} =
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">19:23</span>
+    <span title="Reading time total">19:24</span>
 </div>
 
         
